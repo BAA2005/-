@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Запись к Петру Константиновичу</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fceabb, #f8b500);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+    h1 {
+      color: #914d00;
+      text-shadow: 1px 1px 2px #fff;
+    }
+    form {
+      background: #fff3d4;
+      padding: 20px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #f28c00;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #dd7a00;
+    }
+    .result {
+      margin-top: 30px;
+      padding: 25px;
+      background: #fffbe7;
+      border-radius: 12px;
+      width: 340px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+    }
+    .result h2 {
+      color: #b35600;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Запись к Петру Константиновичу</h1>
+
+  <form id="zapisForm">
+    <input type="text" id="fio" placeholder="Фамилия Имя Отчество" required>
+    <label for="date">Дата:</label>
+    <input type="date" id="date" required>
+    <label for="time">Время:</label>
+    <input type="time" id="time" required>
+    <button type="submit">Записаться</button>
+  </form>
+
+  <div class="result" id="resultBlock">
+    <h2>Вы записались к Петру Константиновичу!</h2>
+    <p>📍 Адрес: <strong>Плутон, горы Хиллари, координаты 5° с. ш., 170° в. д.</strong></p>
+    <p>🚀 Билет на Плутон будет доступен: <strong>с 2636 года</strong>.</p>
+    <p>🎫 Место выдачи билета: <strong>в любое время на вулкане Эйяфьядлайёкюдль</strong>.</p>
+  </div>
+
+  <script>
+    const form = document.getElementById('zapisForm');
+    const result = document.getElementById('resultBlock');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      result.style.display = 'block';
+      form.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
